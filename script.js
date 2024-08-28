@@ -1,16 +1,5 @@
 const chapter1Questions = [
-    // Example questions - replace these with your full set
-    { question: "What does 'Haus' mean?", options: ["House", "Car", "Dog", "Tree"], correctAnswer: "House" },
-    { question: "What does 'Hund' mean?", options: ["Dog", "Cat", "Bird", "Fish"], correctAnswer: "Dog" },
-    { question: "What does 'Tisch' mean?", options: ["Table", "Chair", "Bed", "Sofa"], correctAnswer: "Table" },
-    { question: "What does 'Stuhl' mean?", options: ["Chair", "Table", "Lamp", "Window"], correctAnswer: "Chair" },
-    { question: "What does 'Buch' mean?", options: ["Book", "Pen", "Notebook", "Phone"], correctAnswer: "Book" },
-    { question: "What does 'Apfel' mean?", options: ["Apple", "Banana", "Orange", "Grapes"], correctAnswer: "Apple" },
-    { question: "What does 'Auto' mean?", options: ["Car", "Bike", "Bus", "Train"], correctAnswer: "Car" },
-    { question: "What does 'Straße' mean?", options: ["Street", "Park", "Building", "Shop"], correctAnswer: "Street" },
-    { question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
-    { question: "What does 'Tür' mean?", options: ["Door", "Window", "Floor", "Ceiling"], correctAnswer: "Door" },
-    { question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
+{ question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
     { question: "What does 'Tür' mean?", options: ["Door", "Window", "Floor", "Ceiling"], correctAnswer: "Door" },
     { question: "What does 'Straße' mean?", options: ["Street", "Park", "Building", "Shop"], correctAnswer: "Street" },
     { question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
@@ -208,8 +197,74 @@ const chapter1Questions = [
     { question: "What does 'Grüßen' mean in English?", options: ["To greet", "To stay", "To learn", "To play"], correctAnswer: "To greet" },
     { question: "Which word means 'sick person' in German?", options: ["Kranke", "Wasserflasche", "Handtuch", "Flasche"], correctAnswer: "Kranke" },
     { question: "What is 'Formell' in English?", options: ["Formal", "Informal", "Loud", "Soft"], correctAnswer: "Formal" }
-
 ];
+
+const chapter2Questions = [
+    { question: "What is 'Freund' in English?", options: ["Friend", "Colleagues", "To cook", "To travel"], correctAnswer: "Friend" },
+    { question: "What is 'Kollegen' in English?", options: ["Colleagues", "To sing", "To dance", "To go to cinema"], correctAnswer: "Colleagues" },
+    { question: "What is 'Fotografieren' in English?", options: ["To photograph", "To listen to music", "To swim", "To hate"], correctAnswer: "To photograph" },
+    { question: "What is 'Singen' in English?", options: ["To sing", "To dance", "To travel", "To be free"], correctAnswer: "To sing" },
+    { question: "What is 'Tanzen' in English?", options: ["To dance", "To listen to music", "To search", "To underline"], correctAnswer: "To dance" },
+    { question: "What is 'Joggen' in English?", options: ["To do jogging", "To cook", "To wait", "To drive"], correctAnswer: "To do jogging" },
+    { question: "What is 'Musik hören' in English?", options: ["To listen to music", "To travel", "To swim", "To buy"], correctAnswer: "To listen to music" },
+    { question: "What is 'Gern' in English?", options: ["Happily", "To sell", "Dictionary", "Appointment"], correctAnswer: "Happily" },
+    { question: "What is 'Kochen' in English?", options: ["To cook", "To mention", "To search", "To hate"], correctAnswer: "To cook" },
+    { question: "What is 'Ins Kino gehen' in English?", options: ["To go to cinema", "To do", "To read", "To match to"], correctAnswer: "To go to cinema" },
+    { question: "What is 'Schwimmen' in English?", options: ["To swim", "To buy", "To mention", "To love"], correctAnswer: "To swim" },
+    { question: "What is 'Reisen' in English?", options: ["To travel", "To work", "To wait", "To do"], correctAnswer: "To travel" },
+    { question: "What is 'Machen' in English?", options: ["To do", "To read", "To hate", "To cook"], correctAnswer: "To do" },
+    { question: "What is 'Endungen' in English?", options: ["Endings", "Syringe", "Sensation", "To search"], correctAnswer: "Endings" },
+    { question: "What is 'Wirklich' in English?", options: ["Really", "Car", "Book", "Street"], correctAnswer: "Really" },
+    { question: "What is 'Arbeiten' in English?", options: ["To work", "To listen to music", "To sing", "To be free"], correctAnswer: "To work" },
+    { question: "What is 'Leider' in English?", options: ["Unfortunately", "To mention", "To search", "To dance"], correctAnswer: "Unfortunately" },
+    { question: "What is 'Hassen' in English?", options: ["To hate", "To love", "To buy", "To wait"], correctAnswer: "To hate" },
+    { question: "What is 'Lieben' in English?", options: ["To love", "To cook", "To sing", "To search"], correctAnswer: "To love" },
+    { question: "What is 'Lustig' in English?", options: ["Funny", "To mention", "To cook", "To hate"], correctAnswer: "Funny" },
+    { question: "What is 'Sensation' in English?", options: ["Sensation", "Syringe", "Restaurant", "To swim"], correctAnswer: "Sensation" },
+    { question: "What is 'Auch' in English?", options: ["Also", "To work", "To read", "To cook"], correctAnswer: "Also" },
+    { question: "What is 'Achten + auf' in English?", options: ["To pay attention to", "To search", "To go to cinema", "To listen to music"], correctAnswer: "To pay attention to" },
+    { question: "What is 'Nennen' in English?", options: ["To mention", "To swim", "To travel", "To cook"], correctAnswer: "To mention" },
+    { question: "What is 'Nachsprechen' in English?", options: ["To speak after", "To read", "To search", "To dance"], correctAnswer: "To speak after" },
+    { question: "What is 'Termin' in English?", options: ["Appointment", "Book", "Money", "Doctor"], correctAnswer: "Appointment" },
+    { question: "What is 'Restaurant' in English?", options: ["Restaurant", "Syringe", "Dictionary", "Car"], correctAnswer: "Restaurant" },
+    { question: "What is 'Café' in English?", options: ["Café", "Sensation", "Key", "Book"], correctAnswer: "Café" },
+    { question: "What is 'Schwimmbad' in English?", options: ["Swimming pool", "Money", "Endings", "Doctor"], correctAnswer: "Swimming pool" },
+    { question: "What is 'Theater' in English?", options: ["Theater", "Appointment", "Colleagues", "Car"], correctAnswer: "Theater" },
+    { question: "What is 'Museum' in English?", options: ["Museum", "Car", "Book", "To sing"], correctAnswer: "Museum" },
+    { question: "What is 'Passen + zu' in English?", options: ["To match to", "To hate", "To photograph", "To work"], correctAnswer: "To match to" },
+    { question: "What is 'Taxifahrer' in English?", options: ["Driver", "Syringe", "Street", "To buy"], correctAnswer: "Driver" },
+    { question: "What is 'Auto' in English?", options: ["Car", "Money", "Dictionary", "Street"], correctAnswer: "Car" },
+    { question: "What is 'Buch' in English?", options: ["Book", "Café", "Hospital", "Key"], correctAnswer: "Book" },
+    { question: "What is 'Geld' in English?", options: ["Money", "Endings", "Book", "Key"], correctAnswer: "Money" },
+    { question: "What is 'Rechnung' in English?", options: ["Bill", "Money", "Syringe", "Car"], correctAnswer: "Bill" },
+    { question: "What is 'Straße' in English?", options: ["Street", "Book", "Syringe", "Money"], correctAnswer: "Street" },
+    { question: "What is 'Kellner' in English?", options: ["Waiter", "Key", "Syringe", "To work"], correctAnswer: "Waiter" },
+    { question: "What is 'Schlüssel' in English?", options: ["Key", "Book", "Syringe", "Restaurant"], correctAnswer: "Key" },
+    { question: "What is 'Spritze' in English?", options: ["Syringe", "To cook", "To hate", "To buy"], correctAnswer: "Syringe" },
+    { question: "What is 'Arzt' in English?", options: ["Doctor", "Money", "Book", "To dance"], correctAnswer: "Doctor" },
+    { question: "What is 'Weiter' in English?", options: ["Further", "To listen to music", "To go to cinema", "To work"], correctAnswer: "Further" },
+    { question: "What is 'Suchen' in English?", options: ["To search", "To buy", "To hate", "To dance"], correctAnswer: "To search" },
+    { question: "What is 'Pro Woche' in English?", options: ["Per week", "Book", "To mention", "Syringe"], correctAnswer: "Per week" },
+    { question: "What is 'Stunden' in English?", options: ["Hours", "Syringe", "Doctor", "To cook"], correctAnswer: "Hours" },
+    { question: "What is 'Bis' in English?", options: ["Till", "To search", "To work", "To buy"], correctAnswer: "Till" },
+    { question: "What is 'Sehr' in English?", options: ["Very", "To sing", "To cook", "To search"], correctAnswer: "Very" },
+    { question: "What is 'Groß' in English?", options: ["Big", "To work", "To hate", "To photograph"], correctAnswer: "Big" },
+    { question: "What is 'Meistens' in English?", options: ["Mostly", "To swim", "To mention", "To dance"], correctAnswer: "Mostly" },
+    { question: "What is 'Fahren' in English?", options: ["To drive", "To work", "To buy", "To cook"], correctAnswer: "To drive" },
+    { question: "What is 'Lesen' in English?", options: ["To read", "To travel", "To mention", "To listen to music"], correctAnswer: "To read" },
+    { question: "What is 'Warten' in English?", options: ["To wait", "To search", "To photograph", "To cook"], correctAnswer: "To wait" },
+    { question: "What is 'Frei haben' in English?", options: ["To be free", "To work", "To hate", "To cook"], correctAnswer: "To be free" },
+    { question: "What is 'Platz' in English?", options: ["Place", "To sing", "To buy", "To travel"], correctAnswer: "Place" },
+    { question: "What is 'Krankenpfleger' in English?", options: ["Male nurse", "To work", "To search", "To dance"], correctAnswer: "Male nurse" },
+    { question: "What is 'Unterstreichen' in English?", options: ["To underline", "To listen to music", "To swim", "To search"], correctAnswer: "To underline" },
+    { question: "What is 'Verkaufen' in English?", options: ["To sell", "To hate", "To drive", "To mention"], correctAnswer: "To sell" },
+    { question: "What is 'Kaufen' in English?", options: ["To buy", "To sing", "To travel", "To wait"], correctAnswer: "To buy" },
+    { question: "What is 'Wörterbuch' in English?", options: ["Dictionary", "To search", "To cook", "To love"], correctAnswer: "Dictionary" },
+    { question: "What is 'Zeichnung' in English?", options: ["Drawing", "To travel", "To wait", "To drive"], correctAnswer: "Drawing" },
+    { question: "What is 'Lösungswort' in English?", options: ["Solution word", "Syringe", "Restaurant", "To mention"], correctAnswer: "Solution word" }
+];
+
+
 
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
@@ -231,8 +286,18 @@ function startQuiz() {
 
     if (selectedChapter == '1') {
         selectedQuestions = shuffle(chapter1Questions).slice(0, 10);
+    } else if (selectedChapter == '2') {
+        selectedQuestions = shuffle(chapter2Questions).slice(0, 10);
     }
-    // Add similar blocks for other chapters
+
+    // Initialize progress icons
+    const progressIcons = document.getElementById('progressIcons');
+    progressIcons.innerHTML = '';
+    for (let i = 0; i < selectedQuestions.length; i++) {
+        const icon = document.createElement('div');
+        icon.classList.add('icon');
+        progressIcons.appendChild(icon);
+    }
 
     showQuestion();
 }
@@ -253,7 +318,7 @@ function showQuestion() {
 
     const question = selectedQuestions[currentQuestionIndex];
     const questionContainer = document.getElementById('questionContainer');
-    const shuffledOptions = shuffle([...question.options]); // Shuffle options
+    const shuffledOptions = shuffle([...question.options]);
 
     questionContainer.innerHTML = `
         <div class="question">Question ${currentQuestionIndex + 1}: <strong>${question.question}</strong></div>
@@ -291,8 +356,10 @@ function selectOption(selectedOption) {
             if (selectedOption === selectedQuestions[currentQuestionIndex].correctAnswer) {
                 button.classList.add('correct');
                 score++;
+                updateProgressIcon(true);
             } else {
                 button.classList.add('incorrect');
+                updateProgressIcon(false);
             }
         } else if (button.textContent === selectedQuestions[currentQuestionIndex].correctAnswer) {
             button.classList.add('correct');
@@ -300,6 +367,15 @@ function selectOption(selectedOption) {
     });
 
     document.getElementById('submitBtn').disabled = false;
+}
+
+function updateProgressIcon(isCorrect) {
+    const icons = document.querySelectorAll('#progressIcons .icon');
+    if (isCorrect) {
+        icons[currentQuestionIndex].classList.add('correct');
+    } else {
+        icons[currentQuestionIndex].classList.add('incorrect');
+    }
 }
 
 document.getElementById('submitBtn').addEventListener('click', () => {
