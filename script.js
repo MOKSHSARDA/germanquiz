@@ -1,7 +1,5 @@
+
 const chapter1Questions = [
-{ question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
-    { question: "What does 'Tür' mean?", options: ["Door", "Window", "Floor", "Ceiling"], correctAnswer: "Door" },
-    { question: "What does 'Straße' mean?", options: ["Street", "Park", "Building", "Shop"], correctAnswer: "Street" },
     { question: "What does 'Fenster' mean?", options: ["Window", "Door", "Roof", "Wall"], correctAnswer: "Window" },
     { question: "What does 'Tür' mean?", options: ["Door", "Window", "Floor", "Ceiling"], correctAnswer: "Door" },
     { question: "What is the English meaning of 'Danken'?", options: ["To thank", "To know", "To collect", "To play"], correctAnswer: "To thank" },
@@ -258,14 +256,73 @@ const chapter2Questions = [
     { question: "What is 'Krankenpfleger' in English?", options: ["Male nurse", "To work", "To search", "To dance"], correctAnswer: "Male nurse" },
     { question: "What is 'Unterstreichen' in English?", options: ["To underline", "To listen to music", "To swim", "To search"], correctAnswer: "To underline" },
     { question: "What is 'Verkaufen' in English?", options: ["To sell", "To hate", "To drive", "To mention"], correctAnswer: "To sell" },
-    { question: "What is 'Kaufen' in English?", options: ["To buy", "To sing", "To travel", "To wait"], correctAnswer: "To buy" },
-    { question: "What is 'Wörterbuch' in English?", options: ["Dictionary", "To search", "To cook", "To love"], correctAnswer: "Dictionary" },
-    { question: "What is 'Zeichnung' in English?", options: ["Drawing", "To travel", "To wait", "To drive"], correctAnswer: "Drawing" },
-    { question: "What is 'Lösungswort' in English?", options: ["Solution word", "Syringe", "Restaurant", "To mention"], correctAnswer: "Solution word" }
 ];
 
-
-
+const chapter3Questions = [
+    { question: "What does 'Wählen' mean?", options: ["Choose", "Label", "Write", "Describe"], correctAnswer: "Choose" },
+    { question: "What does 'Benennen' mean?", options: ["To label", "To write", "To describe", "To choose"], correctAnswer: "To label" },
+    { question: "What does 'Schreiben' mean?", options: ["To write", "To describe", "To label", "To choose"], correctAnswer: "To write" },
+    { question: "What does 'Beschreiben' mean?", options: ["To describe", "To write", "To choose", "To label"], correctAnswer: "To describe" },
+    { question: "What does 'Weg' mean?", options: ["Way", "Time", "Season", "Visit"], correctAnswer: "Way" },
+    { question: "What does 'Zeit' mean?", options: ["Time", "Way", "Visit", "Season"], correctAnswer: "Time" },
+    { question: "What does 'Die Jahreszeiten' mean?", options: ["Seasons", "Countries", "Ships", "Ocean"], correctAnswer: "Seasons" },
+    { question: "What does 'Bauzeit' mean?", options: ["To visit", "Time", "Season", "Way"], correctAnswer: "To visit" },
+    { question: "What does 'Besuchen' mean?", options: ["To visit", "To see", "To go", "To travel"], correctAnswer: "To visit" },
+    { question: "What does 'Besucher' mean?", options: ["Visitor", "Guest", "Client", "Audience"], correctAnswer: "Visitor" },
+    { question: "What does 'Schiffe' mean?", options: ["Ships", "Boats", "Trains", "Cars"], correctAnswer: "Ships" },
+    { question: "What does 'Meer' mean?", options: ["Ocean", "Sea", "River", "Lake"], correctAnswer: "Ocean" },
+    { question: "What does 'Fluss' mean?", options: ["River", "Stream", "Creek", "Canal"], correctAnswer: "River" },
+    { question: "What does 'Länder' mean?", options: ["Countries", "Cities", "Nations", "Regions"], correctAnswer: "Countries" },
+    { question: "What does 'Symbol' mean?", options: ["Symbol", "Sign", "Emblem", "Mark"], correctAnswer: "Symbol" },
+    { question: "What does 'Platz' mean?", options: ["Place", "Space", "Square", "Area"], correctAnswer: "Place" },
+    { question: "What does 'Turm' mean?", options: ["Tower", "Building", "Skyscraper", "Pillar"], correctAnswer: "Tower" },
+    { question: "What does 'Hoch' mean?", options: ["High", "Tall", "Elevated", "Big"], correctAnswer: "High" },
+    { question: "What does 'Sehen' mean?", options: ["To see", "To watch", "To observe", "To look"], correctAnswer: "To see" },
+    { question: "What does 'Hafen' mean?", options: ["Port", "Harbor", "Dock", "Pier"], correctAnswer: "Port" },
+    { question: "What does 'Breit' mean?", options: ["Broad", "Wide", "Large", "Expansive"], correctAnswer: "Broad" },
+    { question: "What does 'Personen' mean?", options: ["People", "Persons", "Individuals", "Members"], correctAnswer: "Persons" },
+    { question: "What does 'Zeichnen' mean?", options: ["To draw", "To write", "To sketch", "To paint"], correctAnswer: "To draw" },
+    { question: "What does 'Kennen' mean?", options: ["To know", "To recognize", "To understand", "To realize"], correctAnswer: "To know" },
+    { question: "What does 'Halle' mean?", options: ["Hall", "Room", "Auditorium", "Chamber"], correctAnswer: "Hall" },
+    { question: "What does 'Kunst' mean?", options: ["Art", "Culture", "Craft", "Design"], correctAnswer: "Art" },
+    { question: "What does 'Kirche' mean?", options: ["Church", "Cathedral", "Temple", "Mosque"], correctAnswer: "Church" },
+    { question: "What does 'Der See' mean?", options: ["Lake", "Sea", "Ocean", "River"], correctAnswer: "Lake" },
+    { question: "What does 'Die See' mean?", options: ["Sea", "Ocean", "Lake", "River"], correctAnswer: "Sea" },
+    { question: "What does 'Die Fahrkarte' mean?", options: ["Ticket", "Pass", "Card", "Voucher"], correctAnswer: "Ticket" },
+    { question: "What does 'Für ein Glück' mean?", options: ["What a luck", "How lucky", "Good fortune", "Great luck"], correctAnswer: "What a luck" },
+    { question: "What does 'Zu Fuß gehen' mean?", options: ["To go on foot", "To walk", "To travel", "To run"], correctAnswer: "To go on foot" },
+    { question: "What does 'Links' mean?", options: ["Left", "Right", "Straight", "Back"], correctAnswer: "Left" },
+    { question: "What does 'Rechts' mean?", options: ["Right", "Left", "Straight", "Back"], correctAnswer: "Right" },
+    { question: "What does 'Geradeaus' mean?", options: ["Straight", "Forward", "Ahead", "Directly"], correctAnswer: "Straight" },
+    { question: "What does 'Deutschsprachig' mean?", options: ["German speaking", "German language", "Speaking German", "German native"], correctAnswer: "German speaking" },
+    { question: "What does 'In diesem Jahr' mean?", options: ["In this year", "This year", "During the year", "Yearly"], correctAnswer: "In this year" },
+    { question: "What does 'Zeigen' mean?", options: ["To show", "To point", "To display", "To demonstrate"], correctAnswer: "To show" },
+    { question: "What does 'Produktion' mean?", options: ["Production", "Manufacturing", "Creation", "Development"], correctAnswer: "Production" },
+    { question: "What does 'Es gibt' mean?", options: ["There is", "There are", "Exists", "Available"], correctAnswer: "There is" },
+    { question: "What does 'Der Gast' mean?", options: ["Guest", "Visitor", "Host", "Customer"], correctAnswer: "Guest" },
+    { question: "What does 'Der Regisseur' mean?", options: ["Director", "Producer", "Manager", "Coordinator"], correctAnswer: "Director" },
+    { question: "What does 'Die Schauspieler' mean?", options: ["Actors", "Performers", "Artists", "Celebrities"], correctAnswer: "Actors" },
+    { question: "What does 'Präsentieren' mean?", options: ["To present", "To show", "To introduce", "To display"], correctAnswer: "To present" },
+    { question: "What does 'Publikum' mean?", options: ["Audience", "Public", "Crowd", "Viewers"], correctAnswer: "Audience" },
+    { question: "What does 'Ding' mean?", options: ["Thing", "Object", "Item", "Stuff"], correctAnswer: "Thing" },
+    { question: "What does 'Jedes Jahr' mean?", options: ["Every year", "Each year", "Annually", "Yearly"], correctAnswer: "Every year" },
+    { question: "What does 'Toll' mean?", options: ["Great", "Amazing", "Wonderful", "Good"], correctAnswer: "Great" },
+    { question: "What does 'Das Bad' mean?", options: ["Bathroom", "Bad", "Restroom", "Washroom"], correctAnswer: "Bathroom" },
+    { question: "What does 'Interessant' mean?", options: ["Interesting", "Fascinating", "Exciting", "Curious"], correctAnswer: "Interesting" },
+    { question: "What does 'Langweilig' mean?", options: ["Boring", "Dull", "Tedious", "Uninteresting"], correctAnswer: "Boring" },
+    { question: "What does 'Der Beruf' mean?", options: ["Profession", "Occupation", "Job", "Career"], correctAnswer: "Profession" },
+    { question: "What does 'Verkehrsmittel' mean?", options: ["Means of transport", "Transportation", "Vehicle", "Mode of transport"], correctAnswer: "Means of transport" },
+    { question: "What does 'Raten' mean?", options: ["To advise", "To guess", "To estimate", "To rate"], correctAnswer: "To advise" },
+    { question: "What does 'Die Hauptstraße' mean?", options: ["Main street", "High street", "Principal road", "Main road"], correctAnswer: "Main street" },
+    { question: "What does 'Die Pfeile' mean?", options: ["Arrows", "Signs", "Symbols", "Indicators"], correctAnswer: "Arrows" },
+    { question: "What does 'In Klammern' mean?", options: ["In brackets", "In parentheses", "In quotes", "In commas"], correctAnswer: "In brackets" },
+    { question: "What does 'Der Bahnhof' mean?", options: ["Railway station", "Train station", "Bus station", "Metro station"], correctAnswer: "Railway station" },
+    { question: "What does 'Rocken' mean?", options: ["To rock", "To shake", "To swing", "To sway"], correctAnswer: "To rock" },
+    { question: "What does 'Swingen' mean?", options: ["To swing", "To move", "To dance", "To rotate"], correctAnswer: "To swing" },
+    { question: "What does 'Die Anzeige' mean?", options: ["Advertisement", "Notice", "Display", "Announcement"], correctAnswer: "Advertisement" },
+    { question: "What does 'Öffnungszeiten' mean?", options: ["Opening hours", "Business hours", "Operating hours", "Service hours"], correctAnswer: "Opening hours" },
+    { question: "What does 'Beitrag' mean?", options: ["Piece", "Contribution", "Article", "Post"], correctAnswer: "Piece" }
+];
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -284,10 +341,18 @@ function startQuiz() {
     document.getElementById('homePage').style.display = 'none';
     document.getElementById('quizPage').style.display = 'block';
 
-    if (selectedChapter == '1') {
-        selectedQuestions = shuffle(chapter1Questions).slice(0, 10);
-    } else if (selectedChapter == '2') {
-        selectedQuestions = shuffle(chapter2Questions).slice(0, 10);
+    switch (selectedChapter) {
+        case '1':
+            selectedQuestions = shuffle(chapter1Questions).slice(0, 10);
+            break;
+        case '2':
+            selectedQuestions = shuffle(chapter2Questions).slice(0, 10);
+            break;
+        case '3':
+            selectedQuestions = shuffle(chapter3Questions).slice(0, 10);
+            break;
+        default:
+            selectedQuestions = shuffle(chapter1Questions).slice(0, 10);
     }
 
     // Initialize progress icons
@@ -399,7 +464,7 @@ function showResults() {
     let resultMessage;
     if (score < 3) {
         resultMessage = "Mhnat kr";
-    } else if (score >= 3 && score <= 6) {
+    } else if (score >= 4 && score <= 6) {
         resultMessage = "Thik h bss";
     } else if (score >= 7) {
         resultMessage = "Aacha kr rha hai";
@@ -419,3 +484,4 @@ document.getElementById('homeBtn').addEventListener('click', () => {
     document.getElementById('result').style.display = 'none';
     document.getElementById('homePage').style.display = 'block';
 });
+

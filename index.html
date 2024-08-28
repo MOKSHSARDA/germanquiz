@@ -1,51 +1,68 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Advanced Quiz App</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="homePage" class="container">
-            <h1>Welcome to the Quiz</h1>
-            <label for="username">Enter your name:</label>
-            <input type="text" id="username" placeholder="Your name here">
-            <label for="chapter">Select Chapter:</label>
-            <select id="chapter">
-                <option value="1">Chapter 1</option>
-                <option value="2">Chapter 2</option>
-                <option value="3">Chapter 3</option>
-                <option value="4">Chapter 4</option>
-                <option value="5">Chapter 5</option>
-                <option value="6">Chapter 6</option>
-                <option value="7">Chapter 7</option>
-                <option value="8">Chapter 8</option>
-                <option value="9">Chapter 9</option>
-                <option value="10">Chapter 10</option>
-                <option value="11">Chapter 11</option>
-                <option value="12">Chapter 12</option>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moksh Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="homePage" class="container">
+        <h1>Welcome to the German Quiz</h1>
+        <form name="submit-to-google-sheet">
+        <label for="username">Enter your name:</label>
+        <input name="name" type="text" id="username" placeholder="Your name here">
+  
+        <label for="chapter">Select Chapter:</label>
+        <select id="chapter">
+            <option value="1">Chapter 1</option>
+            <option value="2">Chapter 2</option>
+            <option value="3">Chapter 3</option>
+            <option value="4">Chapter 4</option>
+            <option value="5">Chapter 5</option>
+            <option value="6">Chapter 6</option>
+            <option value="7">Chapter 7</option>
+            <option value="8">Chapter 8</option>
+            <option value="9">Chapter 9</option>
+            <option value="10">Chapter 10</option>
+            <option value="11">Chapter 11</option>
+            <option value="12">Chapter 12</option>
 
-            </select>
-            <button id="startQuiz">Start Quiz</button>
-        </div>
+        </select>
+       
+        <button id="startQuiz">Start Quiz</button>
+    </div>
+</form>
+    <div id="quizPage" class="container" style="display: none;">
+        <div id="progressIcons" class="progress"></div>
+        <div id="questionContainer"></div>
+        <div id="timer">Time left: 10 seconds</div>
+        <button id="submitBtn" disabled>Submit</button>
+    </div>
 
-        <div id="quizPage" class="container" style="display: none;">
-            <div id="progressIcons" class="progress"></div>
-            <div id="questionContainer"></div>
-            <div id="timer">Time left: 10 seconds</div>
-            <button id="submitBtn" disabled>Submit</button>
-        </div>
+    <div id="result" class="container" style="display: none;">
+        <div id="score"></div>
+        <button id="restartBtn">Restart</button>
+        <button id="homeBtn">Return to Homepage</button>
+    </div>
 
-        <div id="result" class="container" style="display: none;">
-            <div id="score"></div>
-            <button id="restartBtn">Restart</button>
-            <button id="homeBtn">Return to Homepage</button>
-        </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyhjOC5eCgzpVbhhpVkkCZXF_at0tmpxeE-CTSeqz6urB2hXJVZxY0fapzlAIS-zHAv/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
-        <footer>
-            <p>Created by <a href="https://www.instagram.com/mokssh__?igsh=a2xrZ3FrOG0ydmI1&utm_source=qr" target="_blank">Moksh Maheshwari</a></p>
-        </footer>
-        <script src="script.js"></script>
-    </body>
-    </html>
+
+    <footer>
+        <p>Created by <a href="https://www.instagram.com/mokssh__?igsh=a2xrZ3FrOG0ydmI1&utm_source=qr" target="_blank">Moksh Maheshwari</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

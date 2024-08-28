@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -68,12 +69,13 @@ button:disabled {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 5px; /* Space between icons */
 }
 
 .icon {
     width: 16px;
     height: 16px;
-    margin: 0 5px;
     border-radius: 50%;
     background-color: #ccc; /* Default grey */
 }
@@ -87,25 +89,25 @@ button:disabled {
 }
 
 .option button {
-    width: 100%;  /* Full width */
-    padding: 15px;  /* More padding for a larger touch area */
-    margin: 5px 0;  /* Margin between buttons */
-    border-radius: 8px;  /* Slightly rounded corners */
-    background-color: #6c42ff;  /* Button color */
+    width: 100%; /* Full width */
+    padding: 15px; /* More padding for a larger touch area */
+    margin: 5px 0; /* Margin between buttons */
+    border-radius: 8px; /* Slightly rounded corners */
+    background-color: #6c42ff; /* Button color */
     color: white;
     font-size: 16px;
 }
 
 .option button:hover {
-    background-color: #5a34cc;  /* Darker color on hover */
+    background-color: #5a34cc; /* Darker color on hover */
 }
 
 .option button.correct {
-    background-color: #28a745;  /* Green for correct answers */
+    background-color: #28a745; /* Green for correct answers */
 }
 
 .option button.incorrect {
-    background-color: #dc3545;  /* Red for incorrect answers */
+    background-color: #dc3545; /* Red for incorrect answers */
 }
 
 #timer {
@@ -181,3 +183,5 @@ footer a:hover {
         font-size: 14px;
     }
 }
+
+
