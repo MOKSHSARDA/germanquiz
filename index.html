@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KBC Deutsch — 2000 Quiz Arena</title>
+  <title>KBC Deutsch — German Quiz Arena</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- ==================== GLOBAL TOP BAR ==================== -->
+  <!-- GLOBAL TOP BAR -->
   <header class="topbar">
     <div class="brand" onclick="navigateTo('homeScreen')" title="Return to Lobby">
       <span class="brand-icon">🏆</span>
@@ -25,38 +25,35 @@
         <span class="coin-icon">🪙</span>
         <span id="walletCoins">0</span> Pts
         <span class="divider">|</span>
-        <span id="userRank">Anfänger</span>
+        <span id="userRank">Beginner</span>
       </button>
     </nav>
   </header>
 
-  <!-- ==================== VIEW 1: HOME / LOBBY SCREEN ==================== -->
+  <!-- VIEW 1: HOME / LOBBY SCREEN -->
   <main id="homeScreen" class="screen active">
     <div class="hero-card kbc-frame">
-      <div class="pill-tag">2,000+ QUESTIONS • A1 TO B2</div>
-      <h1>Kaun Banega <span>Deutsch Meister?</span></h1>
-      <p class="subtitle">10-Question KBC Arena • Words, Numbers &amp; Grammar Mastery</p>
+      <div class="pill-tag">500+ QUESTIONS • A1 TO B2</div>
+      <h1>Who Wants to Be a <span>Deutsch Master?</span></h1>
+      <p class="subtitle">10-Question KBC Arena • Vocabulary, Numbers &amp; Grammar Mastery</p>
 
-      <!-- Player Name Input -->
       <div class="input-group">
-        <label for="playerName">Khiladi ka Naam:</label>
-        <input type="text" id="playerName" placeholder="Apna naam likhein..." maxlength="24" autocomplete="off" />
+        <label for="playerName">Player Name:</label>
+        <input type="text" id="playerName" placeholder="Enter your name..." maxlength="24" autocomplete="off" />
       </div>
 
-      <!-- Category / Practice Mode Filter -->
       <div class="filter-group">
-        <label>Practice Mode Chunein:</label>
+        <label>Select Practice Mode:</label>
         <div class="chip-row" id="modeChips">
           <button type="button" class="chip active" data-mode="MIXED">🎯 All-Rounder (Mix)</button>
-          <button type="button" class="chip" data-mode="vocab">📖 Words</button>
+          <button type="button" class="chip" data-mode="vocab">📖 Vocabulary</button>
           <button type="button" class="chip" data-mode="numbers">🔢 Numbers</button>
           <button type="button" class="chip" data-mode="grammar">🧩 Grammar</button>
         </div>
       </div>
 
-      <!-- CEFR Level Filter -->
       <div class="filter-group">
-        <label>German Level:</label>
+        <label>CEFR German Level:</label>
         <div class="chip-row" id="levelChips">
           <button type="button" class="chip active" data-level="ALL">All (A1–B2)</button>
           <button type="button" class="chip" data-level="A1">A1</button>
@@ -66,29 +63,25 @@
         </div>
       </div>
 
-      <!-- Primary & Secondary Actions -->
       <button type="button" class="btn-gold pulse" onclick="startGame()">
-        ▶ HOT SEAT PAR BAITHEIN (10 Qs)
+        ▶ TAKE THE HOT SEAT (10 Qs)
       </button>
 
       <div class="secondary-actions">
         <button type="button" class="btn-outline" onclick="openPracticeMode()">
-          🗂️ Flashcards (Bina Timer)
+          🗂️ Flashcards (Untimed)
         </button>
         <button type="button" class="btn-outline" onclick="openWallet()">
-          🪙 Mere Points &amp; Badges
+          🪙 My Points &amp; Badges
         </button>
       </div>
     </div>
   </main>
 
-  <!-- ==================== VIEW 2: KBC HOT SEAT ARENA ==================== -->
+  <!-- VIEW 2: KBC HOT SEAT ARENA -->
   <section id="gameScreen" class="screen">
     <div class="arena-layout">
-
-      <!-- Left Column: Question, Lifelines & Hexagonal Options -->
       <div class="play-zone">
-        <!-- Top HUD Bar -->
         <div class="hud-bar">
           <div class="lifelines" aria-label="Lifelines">
             <button type="button" id="ll-5050" class="ll-btn" onclick="use5050()" title="50:50 — Remove 2 wrong options">50:50</button>
@@ -101,122 +94,111 @@
           </div>
 
           <div class="hud-right">
-            <button type="button" class="btn-ladder-mobile" onclick="toggleMobileLadder()" title="View Point Ladder">🏆 Ladder</button>
+            <button type="button" class="btn-ladder-mobile" onclick="toggleMobileLadder()">🏆 Ladder</button>
             <button type="button" class="btn-quit" onclick="quitGame()" title="Walk away with current points">🚪 Quit</button>
           </div>
         </div>
 
-        <!-- Question Metadata & Pronunciation -->
         <div class="q-meta">
           <span id="qNumberTag" class="q-step-pill">Q 1 / 10</span>
           <span id="qLevelTag" class="badge level-badge">A1</span>
           <span id="qCatTag" class="badge cat-badge">VOCAB</span>
           <span id="streakBadge" class="badge streak-badge hidden">🔥 2x Streak</span>
           <button type="button" class="speak-btn" onclick="speakGerman()" title="Listen to German pronunciation">
-            🔊 Suno
+            🔊 Listen
           </button>
         </div>
 
-        <!-- KBC Hexagonal Question Frame -->
         <div class="kbc-hex-question">
-          <h2 id="questionText">Question loading...</h2>
+          <h2 id="questionText">Loading question...</h2>
         </div>
 
-        <!-- 2x2 Hexagonal Options Grid -->
-        <div class="options-grid" id="optionsGrid">
-          <!-- Populated dynamically by app.js -->
-        </div>
+        <div class="options-grid" id="optionsGrid"></div>
 
-        <!-- KBC Suspense Lock Confirmation Bar -->
         <div id="lockBar" class="lock-bar hidden">
-          <span class="lock-prompt">Option <strong id="selectedOptLabel">A</strong> chuna gaya hai —</span>
-          <button type="button" class="btn-lock" onclick="confirmLock()">🔒 LOCK KAR DIYA JAYE?</button>
+          <span class="lock-prompt">Option <strong id="selectedOptLabel">A</strong> selected —</span>
+          <button type="button" class="btn-lock" onclick="confirmLock()">🔒 LOCK FINAL ANSWER?</button>
         </div>
       </div>
 
-      <!-- Right Sidebar: 10-Step KBC Point Pyramid -->
       <aside id="ladderSidebar" class="ladder-box">
         <div class="ladder-header">
           <h3>🏆 POINT LADDER</h3>
           <button type="button" class="close-ladder-btn" onclick="toggleMobileLadder()">✖</button>
         </div>
-        <ul id="ladderList">
-          <!-- 10 Steps rendered by app.js -->
-        </ul>
+        <ul id="ladderList"></ul>
         <div class="safe-legend">🛡️ = Safe Haven (Guaranteed Points)</div>
       </aside>
-
     </div>
   </section>
 
-  <!-- ==================== VIEW 3: RESULT & MISTAKE REVIEW ==================== -->
+  <!-- VIEW 3: RESULT & MISTAKE REVIEW -->
   <section id="resultScreen" class="screen">
     <div class="hero-card kbc-frame">
-      <h2 id="resultTitle">Khel Samapt!</h2>
+      <h2 id="resultTitle">Game Over!</h2>
       <p id="playerResultName" class="player-tag"></p>
 
       <div class="reward-banner">
-        <p>Is Round Mein Jeete:</p>
+        <p>Points Won This Round:</p>
         <h1 class="earned-pts">+<span id="earnedPoints">0</span> 🪙</h1>
-        <p class="sub-stat" id="resultSummary">0 / 10 Sahi Jawab</p>
+        <p class="sub-stat" id="resultSummary">0 / 10 Questions Cleared</p>
       </div>
 
-      <!-- Mistake Review Section -->
       <div id="mistakeBox" class="mistake-list"></div>
 
       <div class="result-actions">
-        <button type="button" class="btn-gold" onclick="startGame()">🔄 Ek Aur Round Khelein</button>
+        <button type="button" class="btn-gold" onclick="startGame()">🔄 Play Another Round</button>
         <div class="secondary-actions">
-          <button type="button" class="btn-outline" onclick="openWallet()">🪙 Total Wallet Check Karein</button>
-          <button type="button" class="btn-outline" onclick="openLeaderboard()">🌍 Leaderboard Dekhein</button>
+          <button type="button" class="btn-outline" onclick="openWallet()">🪙 Check Total Wallet</button>
+          <button type="button" class="btn-outline" onclick="openLeaderboard()">🌍 View Leaderboard</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== VIEW 4: GLOBAL LEADERBOARD ==================== -->
+  <!-- VIEW 4: GLOBAL LEADERBOARD -->
   <section id="leaderboardScreen" class="screen">
     <div class="hero-card kbc-frame">
       <div class="screen-header">
-        <h2>🌍 Top Deutsch Meisters</h2>
+        <h2>🌍 Top Deutsch Masters</h2>
         <button type="button" class="btn-small" onclick="navigateTo('homeScreen')">← Lobby</button>
       </div>
-      <p class="subtitle">Live Rankings — Sabse Zyada Points Kamane Wale Khiladi</p>
+      <p class="subtitle">Live Rankings — Highest Scoring Players Worldwide</p>
 
       <div id="leaderboardList" class="leaderboard-table">
-        <p class="loading-text">Rankings load ho rahi hain...</p>
+        <p class="loading-text">Loading rankings...</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== VIEW 5: FLASHCARD PRACTICE (NO TIMER) ==================== -->
+  <!-- VIEW 5: FLASHCARD PRACTICE -->
   <section id="practiceScreen" class="screen">
     <div class="hero-card kbc-frame">
       <div class="screen-header">
-        <h2>🗂️ Relax Flashcard Mode</h2>
+        <h2>🗂️ Untimed Flashcards</h2>
         <button type="button" class="btn-small" onclick="navigateTo('homeScreen')">← Lobby</button>
       </div>
-      <p class="subtitle">Bina timer ke German words, numbers aur grammar yaad karein</p>
+      <p class="subtitle">Master German vocabulary, numbers, and grammar at your own pace</p>
 
       <div class="flashcard" id="flashcardBox" onclick="flipFlashcard()">
         <span class="badge" id="fcTag">A1 • VOCAB</span>
         <h2 id="fcFront">Der Bahnhof</h2>
         <p id="fcBack" class="fc-answer hidden">Railway station</p>
-        <small class="tap-hint">(Jawab dekhne ke liye card par tap karein)</small>
+        <small class="tap-hint">(Tap card to reveal answer)</small>
       </div>
 
       <div class="secondary-actions">
-        <button type="button" class="btn-outline" onclick="speakFlashcard()">🔊 Suno</button>
-        <button type="button" class="btn-gold" onclick="nextFlashcard()">Agla Card →</button>
+        <button type="button" class="btn-outline" onclick="speakFlashcard()">🔊 Listen</button>
+        <button type="button" class="btn-gold" onclick="nextFlashcard()">Next Card →</button>
       </div>
     </div>
   </section>
 
-  <!-- ==================== MODAL 1: POINT WALLET & BADGES ==================== -->
+  <!-- MODAL 1: POINT WALLET & BADGES -->
   <div id="walletModal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-card kbc-frame">
       <div class="modal-head">
-        <h3>🪙 Aapka Reward Wallet</h3>
+        <h3>🪙 Your Reward Wallet</h3>
         <button type="button" onclick="closeWallet()">✖</button>
       </div>
 
@@ -226,8 +208,8 @@
           <strong id="statTotalPts">0</strong>
         </div>
         <div class="stat-box">
-          <span>Solved</span>
-          <strong id="statSolved">0 / 2000</strong>
+          <span>Mastered</span>
+          <strong id="statSolved">0 / 500</strong>
         </div>
         <div class="stat-box">
           <span>Best Streak</span>
@@ -240,7 +222,7 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL 2: AUDIENCE POLL ==================== -->
+  <!-- MODAL 2: AUDIENCE POLL -->
   <div id="pollModal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-card kbc-frame">
       <div class="modal-head">
@@ -251,7 +233,6 @@
     </div>
   </div>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer class="app-footer">
     <p>
       Created by
