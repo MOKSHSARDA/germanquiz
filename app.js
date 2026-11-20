@@ -661,3 +661,13 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+fetch("data/questions.json")
+  .then(res => (res.ok ? res.json() : SAMPLE_QUESTIONS))
+  .then(data => {
+    allQuestions = expandTo500Questions(Array.isArray(data) && data.length ? data : SAMPLE_QUESTIONS);
+    console.log("Total Active Questions:", allQuestions.length); // 500 dikhayega!
+  })
+  .catch(() => {
+    allQuestions = expandTo500Questions(SAMPLE_QUESTIONS);
+  });
