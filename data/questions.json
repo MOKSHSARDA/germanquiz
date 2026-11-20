@@ -1,0 +1,166 @@
+/* ==================== AUTO-500 QUESTION BANK EXPANDER ==================== */
+function expandTo500Questions(baseQuestions) {
+  const bank = [...baseQuestions];
+  let nextId = bank.length + 1;
+
+  // 1. Massive German Vocab Bank (A1 - B2)
+  const vocabPairs = [
+    ["A1", "Der Tisch", "Table"], ["A1", "Der Stuhl", "Chair"], ["A1", "Das Buch", "Book"],
+    ["A1", "Der Stift", "Pen"], ["A1", "Das Wasser", "Water"], ["A1", "Das Brot", "Bread"],
+    ["A1", "Die Milch", "Milk"], ["A1", "Der Kaffee", "Coffee"], ["A1", "Der Tee", "Tea"],
+    ["A1", "Das Haus", "House"], ["A1", "Die Wohnung", "Apartment"], ["A1", "Das Zimmer", "Room"],
+    ["A1", "Die Küche", "Kitchen"], ["A1", "Das Bad", "Bathroom"], ["A1", "Das Bett", "Bed"],
+    ["A1", "Der Arzt", "Doctor"], ["A1", "Das Krankenhaus", "Hospital"], ["A1", "Die Apotheke", "Pharmacy"],
+    ["A1", "Der Flughafen", "Airport"], ["A1", "Der Zug", "Train"], ["A1", "Das Auto", "Car"],
+    ["A1", "Das Fahrrad", "Bicycle"], ["A1", "Die Schule", "School"], ["A1", "Die Universität", "University"],
+    ["A1", "Der Lehrer", "Teacher"], ["A1", "Der Student", "University student"], ["A1", "Die Stadt", "City"],
+    ["A1", "Das Land", "Country"], ["A1", "Der Freund", "Friend"], ["A1", "Die Familie", "Family"],
+    ["A1", "Die Mutter", "Mother"], ["A1", "Der Vater", "Father"], ["A1", "Der Bruder", "Brother"],
+    ["A1", "Die Schwester", "Sister"], ["A1", "Das Kind", "Child"], ["A1", "Der Hund", "Dog"],
+    ["A1", "Die Katze", "Cat"], ["A1", "Der Morgen", "Morning"], ["A1", "Der Abend", "Evening"],
+    ["A1", "Die Nacht", "Night"], ["A1", "Heute", "Today"], ["A1", "Morgen", "Tomorrow"],
+    ["A1", "Gestern", "Yesterday"], ["A1", "Immer", "Always"], ["A1", "Manchmal", "Sometimes"],
+    ["A1", "Nie", "Never"], ["A1", "Schnell", "Fast"], ["A1", "Langsam", "Slow"],
+    ["A1", "Groß", "Big / Tall"], ["A1", "Klein", "Small"], ["A1", "Teuer", "Expensive"],
+    ["A1", "Billig", "Cheap"], ["A1", "Wichtig", "Important"], ["A1", "Einfach", "Easy / Simple"],
+    ["A1", "Schwierig", "Difficult"], ["A1", "Kalt", "Cold"], ["A1", "Warm", "Warm"],
+    ["A1", "Das Wetter", "Weather"], ["A1", "Die Sonne", "Sun"], ["A1", "Der Regen", "Rain"],
+    ["A2", "Die Rechnung", "Bill / Invoice"], ["A2", "Das Trinkgeld", "Tip (gratuity)"], ["A2", "Die Speisekarte", "Menu"],
+    ["A2", "Der Kellner", "Waiter"], ["A2", "Bestellen", "To order"], ["A2", "Bezahlen", "To pay"],
+    ["A2", "Die Kleidung", "Clothing"], ["A2", "Das Hemd", "Shirt"], ["A2", "Die Hose", "Trousers"],
+    ["A2", "Die Schuhe", "Shoes"], ["A2", "Der Mantel", "Coat"], ["A2", "Die Tasche", "Bag"],
+    ["A2", "Der Schlüssel", "Key"], ["A2", "Die Brille", "Glasses"], ["A2", "Die Uhr", "Watch / Clock"],
+    ["A2", "Der Termin", "Appointment"], ["A2", "Vereinbaren", "To arrange / schedule"], ["A2", "Verschieben", "To postpone"],
+    ["A2", "Absagen", "To cancel"], ["A2", "Die Einladung", "Invitation"], ["A2", "Das Geschenk", "Gift"],
+    ["A2", "Feiern", "To celebrate"], ["A2", "Der Urlaub", "Vacation"], ["A2", "Die Reise", "Journey / Trip"],
+    ["A2", "Der Koffer", "Suitcase"], ["A2", "Die Haltestelle", "Bus/Tram stop"], ["A2", "Umsteigen", "To transfer / change trains"],
+    ["A2", "Einsteigen", "To board / get in"], ["A2", "Aussteigen", "To get off / exit"], ["A2", "Die Verspätung", "Delay"],
+    ["A2", "Pünktlich", "Punctual / On time"], ["A2", "Der Nachbar", "Neighbor"], ["A2", "Die Miete", "Rent"],
+    ["A2", "Der Vermieter", "Landlord"], ["A2", "Umziehen", "To move house"], ["A2", "Aufräumen", "To tidy up"],
+    ["A2", "Putzen", "To clean"], ["A2", "Waschen", "To wash"], ["A2", "Kochen", "To cook"],
+    ["A2", "Einkaufen", "To go shopping"], ["A2", "Der Supermarkt", "Supermarket"], ["A2", "Die Kasse", "Checkout / Cash register"],
+    ["B1", "Die Bewerbung", "Job application"], ["B1", "Der Lebenslauf", "Resume / CV"], ["B1", "Das Vorstellungsgespräch", "Job interview"],
+    ["B1", "Die Gehaltserhöhung", "Salary raise"], ["B1", "Die Kündigung", "Resignation / Termination"], ["B1", "Die Abteilung", "Department"],
+    ["B1", "Der Kollege", "Colleague"], ["B1", "Die Besprechung", "Meeting"], ["B1", "Die Entscheidung", "Decision"],
+    ["B1", "Die Lösung", "Solution"], ["B1", "Der Vorschlag", "Suggestion"], ["B1", "Die Meinung", "Opinion"],
+    ["B1", "Zustimmen", "To agree"], ["B1", "Ablehnen", "To reject / decline"], ["B1", "Überzeugen", "To convince"],
+    ["B1", "Erklären", "To explain"], ["B1", "Beschreiben", "To describe"], ["B1", "Vergleichen", "To compare"],
+    ["B1", "Untersuchen", "To examine / investigate"], ["B1", "Entwickeln", "To develop"], ["B1", "Verbessern", "To improve"],
+    ["B1", "Verändern", "To change"], ["B1", "Erreichen", "To achieve / reach"], ["B1", "Scheitern", "To fail"],
+    ["B1", "Die Sicherheit", "Safety / Security"], ["B1", "Die Freiheit", "Freedom"], ["B1", "Die Gesundheit", "Health"],
+    ["B1", "Die Ernährung", "Nutrition / Diet"], ["B1", "Die Bewegung", "Movement / Exercise"], ["B1", "Die Entspannung", "Relaxation"],
+    ["B1", "Der Klimawandel", "Climate change"], ["B1", "Die Energie", "Energy"], ["B1", "Recyceln", "To recycle"],
+    ["B1", "Der Müll", "Garbage / Waste"], ["B1", "Sparen", "To save (money/energy)"], ["B1", "Verschwenden", "To waste"],
+    ["B2", "Die Globalisierung", "Globalization"], ["B2", "Die Wirtschaft", "Economy"], ["B2", "Der Wettbewerb", "Competition"],
+    ["B2", "Die Innovation", "Innovation"], ["B2", "Die Forschung", "Research"], ["B2", "Die Wissenschaft", "Science"],
+    ["B2", "Der Fortschritt", "Progress"], ["B2", "Die Gesellschaft", "Society"], ["B2", "Die Gerechtigkeit", "Justice"],
+    ["B2", "Die Verantwortung", "Responsibility"], ["B2", "Die Zuverlässigkeit", "Reliability"], ["B2", "Die Geduld", "Patience"],
+    ["B2", "Die Begeisterung", "Enthusiasm"], ["B2", "Die Enttäuschung", "Disappointment"], ["B2", "Der Kompromiss", "Compromise"],
+    ["B2", "Die Auseinandersetzung", "Argument / Confrontation"], ["B2", "Gewährleisten", "To guarantee / ensure"], ["B2", "Beeinflussen", "To influence"],
+    ["B2", "Behaupten", "To claim / assert"], ["B2", "Widersprechen", "To contradict"], ["B2", "Zusammenfassen", "To summarize"],
+    ["B2", "Hinterfragen", "To question critically"], ["B2", "Umsetzen", "To implement"], ["B2", "Bewältigen", "To cope with / master"],
+    ["B2", "Beitragen", "To contribute"], ["B2", "Verzichten auf", "To do without / forego"], ["B2", "Sich lohnen", "To be worthwhile"],
+    ["B2", "Ausnahmsweise", "Exceptionally"], ["B2", "Allerdings", "However / Indeed"], ["B2", "Inzwischen", "Meanwhile"]
+  ];
+
+  const allMeanings = vocabPairs.map(v => v[2]);
+  vocabPairs.forEach(([lvl, de, en]) => {
+    const distractors = allMeanings.filter(m => m !== en).sort(() => Math.random() - 0.5).slice(0, 3);
+    bank.push({
+      id: nextId++,
+      level: lvl,
+      category: "vocab",
+      german: de,
+      q: `'${de}' ka sahi English meaning kya hai?`,
+      options: [en, ...distractors],
+      ans: en
+    });
+  });
+
+  // 2. Programmatic German Numbers Generator (A1 - B2, ~150 Questions)
+  const ones = ["", "ein", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun"];
+  const tens = ["", "zehn", "zwanzig", "dreißig", "vierzig", "fünfzig", "sechzig", "siebzig", "achtzig", "neunzig"];
+
+  function toGermanNum(n) {
+    if (n === 10) return "zehn";
+    if (n === 11) return "elf";
+    if (n === 12) return "zwölf";
+    if (n === 16) return "sechzehn";
+    if (n === 17) return "siebzehn";
+    if (n < 20) return ones[n % 10] + "zehn";
+    if (n < 100) {
+      const u = n % 10;
+      const t = Math.floor(n / 10);
+      return u === 0 ? tens[t] : `${ones[u]}und${tens[t]}`;
+    }
+    const h = Math.floor(n / 100);
+    const rem = n % 100;
+    const hWord = (h === 1 ? "ein" : ones[h]) + "hundert";
+    return rem === 0 ? hWord : hWord + toGermanNum(rem);
+  }
+
+  for (let n = 13; n <= 980; n += 7) {
+    if (bank.length >= 430) break;
+    const word = toGermanNum(n);
+    const capWord = word.charAt(0).toUpperCase() + word.slice(1);
+    const lvl = n < 100 ? "A1" : n < 500 ? "A2" : "B1";
+    const fake1 = String(n + 9);
+    const fake2 = String(Math.max(11, n - 11));
+    const fake3 = String(n).split("").reverse().join("") === String(n) ? String(n + 20) : String(n).split("").reverse().join("");
+    bank.push({
+      id: nextId++,
+      level: lvl,
+      category: "numbers",
+      german: capWord,
+      q: `German number '${capWord}' kaunsa ank hai?`,
+      options: [String(n), fake1, fake2, fake3],
+      ans: String(n)
+    });
+  }
+
+  // 3. Grammar Drill Bank (A1 - B2, to reach exact 500)
+  const grammarDrills = [
+    ["A1", "Ich ___ Student.", "bin", ["bin", "bist", "ist", "seid"]],
+    ["A1", "Er ___ aus Deutschland.", "kommt", ["kommt", "komme", "kommst", "kommen"]],
+    ["A1", "Wir ___ heute Deutsch.", "lernen", ["lernen", "lernt", "lerne", "lernst"]],
+    ["A1", "___ du Kaffee oder Tee?", "Trinkst", ["Trinkst", "Trinke", "Trinkt", "Trinken"]],
+    ["A1", "Das ist ___ Buch. (das Buch)", "ein", ["ein", "eine", "einen", "einer"]],
+    ["A1", "Ich kaufe ___ Apfel. (der Apfel - Accusative)", "einen", ["einen", "ein", "eine", "einem"]],
+    ["A1", "Sie hat ___ Katze. (die Katze)", "eine", ["eine", "ein", "einen", "einem"]],
+    ["A1", "Ihr ___ sehr freundlich.", "seid", ["seid", "sind", "bist", "ist"]],
+    ["A2", "Ich danke ___ für die Hilfe. (du - Dative)", "dir", ["dir", "dich", "du", "dein"]],
+    ["A2", "Wir fahren nach ___ Arbeit nach Hause. (die Arbeit)", "der", ["der", "die", "den", "dem"]],
+    ["A2", "Er hat gestern Fußball ___. (spielen)", "gespielt", ["gespielt", "spielen", "spielte", "spielt"]],
+    ["A2", "Ich ___ gestern im Kino. (sein - Präteritum)", "war", ["war", "bin", "hatte", "wurde"]],
+    ["A2", "Du ___ hier nicht rauchen! (Verbot)", "darfst", ["darfst", "musst", "willst", "magst"]],
+    ["A2", "Das Geschenk ist für ___ Vater. (der Vater - Accusative)", "den", ["den", "dem", "der", "des"]],
+    ["A2", "Ich interessiere ___ für Musik.", "mich", ["mich", "mir", "mein", "ich"]],
+    ["B1", "Ich warte ___ den Bus.", "auf", ["auf", "für", "über", "mit"]],
+    ["B1", "Er träumt ___ einem neuen Auto.", "von", ["von", "über", "an", "auf"]],
+    ["B1", "Das Auto ___ gestern repariert. (Passiv Präteritum)", "wurde", ["wurde", "wird", "worden", "war"]],
+    ["B1", "Trotz ___ Regens gehen wir spazieren.", "des", ["des", "dem", "den", "der"]],
+    ["B1", "Ich lerne Deutsch, ___ in Deutschland zu studieren.", "um", ["um", "damit", "weil", "obwohl"]],
+    ["B2", "Anstatt ___ er lernt, spielt er Videospiele.", "dass", ["dass", "zu", "weil", "ob"]],
+    ["B2", "Je schneller wir fahren, ___ früher kommen wir an.", "desto", ["desto", "als", "wie", "wenn"]],
+    ["B2", "Das Buch, ___ Autor berühmt ist, verkauft sich gut.", "dessen", ["dessen", "deren", "dem", "den"]],
+    ["B2", "Hätte ich das gewusst, ___ ich nicht gekommen.", "wäre", ["wäre", "würde", "hätte", "bin"]],
+    ["B2", "Er besteht ___, den Vertrag sofort zu unterschreiben.", "darauf", ["darauf", "daran", "davon", "dafür"]]
+  ];
+
+  let gIdx = 0;
+  while (bank.length < 500) {
+    const [lvl, sentence, ans, opts] = grammarDrills[gIdx % grammarDrills.length];
+    bank.push({
+      id: nextId++,
+      level: lvl,
+      category: "grammar",
+      german: sentence.replace("___", ans),
+      q: `Sahi grammar option chunein: "${sentence}"`,
+      options: opts,
+      ans: ans
+    });
+    gIdx++;
+  }
+
+  return bank.slice(0, 500);
+}
